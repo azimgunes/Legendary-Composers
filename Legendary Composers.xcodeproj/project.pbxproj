@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CC821922B908181006216E7 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC821912B908181006216E7 /* Composer.swift */; };
+		3CC821942B9083D9006216E7 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC821932B9083D9006216E7 /* Death.swift */; };
+		3CC821972B9085D6006216E7 /* ComposersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC821962B9085D6006216E7 /* ComposersViewModel.swift */; };
+		3CC8219A2B908BAF006216E7 /* ComposerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC821992B908BAF006216E7 /* ComposerTableViewCell.swift */; };
 		3CC9FBF82B8F82F9004246A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FBF72B8F82F9004246A6 /* AppDelegate.swift */; };
 		3CC9FBFA2B8F82F9004246A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FBF92B8F82F9004246A6 /* SceneDelegate.swift */; };
 		3CC9FBFC2B8F82F9004246A6 /* ComposersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FBFB2B8F82F9004246A6 /* ComposersViewController.swift */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CC821912B908181006216E7 /* Composer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
+		3CC821932B9083D9006216E7 /* Death.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
+		3CC821962B9085D6006216E7 /* ComposersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposersViewModel.swift; sourceTree = "<group>"; };
+		3CC821992B908BAF006216E7 /* ComposerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerTableViewCell.swift; sourceTree = "<group>"; };
 		3CC9FBF42B8F82F9004246A6 /* Legendary Composers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Legendary Composers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC9FBF72B8F82F9004246A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CC9FBF92B8F82F9004246A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CC821902B908170006216E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CC821912B908181006216E7 /* Composer.swift */,
+				3CC821932B9083D9006216E7 /* Death.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3CC821952B9085A3006216E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3CC821962B9085D6006216E7 /* ComposersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3CC821982B908B71006216E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CC821992B908BAF006216E7 /* ComposerTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3CC9FBEB2B8F82F9004246A6 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +101,9 @@
 		3CC9FBF62B8F82F9004246A6 /* Legendary Composers */ = {
 			isa = PBXGroup;
 			children = (
+				3CC821982B908B71006216E7 /* Views */,
+				3CC821952B9085A3006216E7 /* ViewModel */,
+				3CC821902B908170006216E7 /* Model */,
 				3CC9FC1C2B8F9C25004246A6 /* ViewControllers */,
 				3CC9FC0E2B8F8EC4004246A6 /* Resources */,
 				3CC9FBF72B8F82F9004246A6 /* AppDelegate.swift */,
@@ -185,9 +221,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC821922B908181006216E7 /* Composer.swift in Sources */,
+				3CC8219A2B908BAF006216E7 /* ComposerTableViewCell.swift in Sources */,
 				3CC9FBFC2B8F82F9004246A6 /* ComposersViewController.swift in Sources */,
 				3CC9FC1B2B8F8ED1004246A6 /* Composers.swift in Sources */,
+				3CC821972B9085D6006216E7 /* ComposersViewModel.swift in Sources */,
 				3CC9FBF82B8F82F9004246A6 /* AppDelegate.swift in Sources */,
+				3CC821942B9083D9006216E7 /* Death.swift in Sources */,
 				3CC9FBFA2B8F82F9004246A6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
