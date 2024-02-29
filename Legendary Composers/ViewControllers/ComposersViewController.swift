@@ -19,6 +19,7 @@ class ComposersViewController: UIViewController {
         tv.estimatedRowHeight = 44
         tv.separatorStyle = .none
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tv.register(ComposerTableViewCell.self, forCellReuseIdentifier: ComposerTableViewCell.cellId)
         return tv
     }()
     
@@ -60,22 +61,12 @@ private extension ComposersViewController {
 
 extension ComposersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        switch indexPath.row {
-        case 0:
-            cell.backgroundColor = .systemBlue
-        case 1:
-            cell.backgroundColor = .systemOrange
-        case 2:
-            cell.backgroundColor = .systemPink
-        default:
-            break
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: ComposerTableViewCell.cellId, for: indexPath) as! ComposerTableViewCell
+        cell.configure()
         return cell
     }
     

@@ -12,7 +12,7 @@ class ComposersViewModel {
     private(set) var composers: [Composer] = [
         Composer(id: .beethoven,
                  name: "Ludwig van Beethoven",
-                 info: "udwig van Beethoven was a German pianist and composer widely considered to be one of the greatest musical geniuses of all time. His innovative compositions combined vocals and instruments, widening the scope of sonata, symphony, concerto and quartet. He is the crucial transitional figure connecting the Classical and Romantic ages of Western music.",
+                 info: "Ludwig van Beethoven was a German pianist and composer widely considered to be one of the greatest musical geniuses of all time. His innovative compositions combined vocals and instruments, widening the scope of sonata, symphony, concerto and quartet. He is the crucial transitional figure connecting the Classical and Romantic ages of Western music.",
                  death: .init(date: 1827, country: .austria),
                  birthday: 1770),
         

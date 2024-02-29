@@ -37,7 +37,7 @@ extension ComposerType {
         switch self {
             
         case .beethoven:
-            return  UIColor.red
+            return  UIColor.orange
         case .mozart:
             return UIColor.blue
         case .vivaldi:
