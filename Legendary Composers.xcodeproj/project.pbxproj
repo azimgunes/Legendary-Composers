@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		3CC9FBF82B8F82F9004246A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FBF72B8F82F9004246A6 /* AppDelegate.swift */; };
 		3CC9FBFA2B8F82F9004246A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FBF92B8F82F9004246A6 /* SceneDelegate.swift */; };
-		3CC9FBFC2B8F82F9004246A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FBFB2B8F82F9004246A6 /* ViewController.swift */; };
+		3CC9FBFC2B8F82F9004246A6 /* ComposersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FBFB2B8F82F9004246A6 /* ComposersViewController.swift */; };
 		3CC9FBFF2B8F82F9004246A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FBFD2B8F82F9004246A6 /* Main.storyboard */; };
 		3CC9FC012B8F82FB004246A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC002B8F82FB004246A6 /* Assets.xcassets */; };
 		3CC9FC042B8F82FB004246A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC022B8F82FB004246A6 /* LaunchScreen.storyboard */; };
+		3CC9FC152B8F8EC4004246A6 /* Nocturne-C.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC102B8F8EC4004246A6 /* Nocturne-C.mp3 */; };
+		3CC9FC162B8F8EC4004246A6 /* Fourseasons-V.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC112B8F8EC4004246A6 /* Fourseasons-V.mp3 */; };
+		3CC9FC172B8F8EC4004246A6 /* Serenade-S.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC122B8F8EC4004246A6 /* Serenade-S.mp3 */; };
+		3CC9FC182B8F8EC4004246A6 /* Requiem-M.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC132B8F8EC4004246A6 /* Requiem-M.mp3 */; };
+		3CC9FC192B8F8EC4004246A6 /* Moonlight-B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC142B8F8EC4004246A6 /* Moonlight-B.mp3 */; };
+		3CC9FC1B2B8F8ED1004246A6 /* Composers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FC1A2B8F8ED1004246A6 /* Composers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CC9FBF42B8F82F9004246A6 /* Legendary Composers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Legendary Composers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC9FBF72B8F82F9004246A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CC9FBF92B8F82F9004246A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3CC9FBFB2B8F82F9004246A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3CC9FBFB2B8F82F9004246A6 /* ComposersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposersViewController.swift; sourceTree = "<group>"; };
 		3CC9FBFE2B8F82F9004246A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CC9FC002B8F82FB004246A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CC9FC032B8F82FB004246A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CC9FC052B8F82FB004246A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CC9FC102B8F8EC4004246A6 /* Nocturne-C.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nocturne-C.mp3"; sourceTree = "<group>"; };
+		3CC9FC112B8F8EC4004246A6 /* Fourseasons-V.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fourseasons-V.mp3"; sourceTree = "<group>"; };
+		3CC9FC122B8F8EC4004246A6 /* Serenade-S.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Serenade-S.mp3"; sourceTree = "<group>"; };
+		3CC9FC132B8F8EC4004246A6 /* Requiem-M.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Requiem-M.mp3"; sourceTree = "<group>"; };
+		3CC9FC142B8F8EC4004246A6 /* Moonlight-B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Moonlight-B.mp3"; sourceTree = "<group>"; };
+		3CC9FC1A2B8F8ED1004246A6 /* Composers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,45 @@
 		3CC9FBF62B8F82F9004246A6 /* Legendary Composers */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9FC1C2B8F9C25004246A6 /* ViewControllers */,
+				3CC9FC0E2B8F8EC4004246A6 /* Resources */,
 				3CC9FBF72B8F82F9004246A6 /* AppDelegate.swift */,
 				3CC9FBF92B8F82F9004246A6 /* SceneDelegate.swift */,
-				3CC9FBFB2B8F82F9004246A6 /* ViewController.swift */,
 				3CC9FBFD2B8F82F9004246A6 /* Main.storyboard */,
 				3CC9FC002B8F82FB004246A6 /* Assets.xcassets */,
 				3CC9FC022B8F82FB004246A6 /* LaunchScreen.storyboard */,
 				3CC9FC052B8F82FB004246A6 /* Info.plist */,
 			);
 			path = "Legendary Composers";
+			sourceTree = "<group>";
+		};
+		3CC9FC0E2B8F8EC4004246A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CC9FC0F2B8F8EC4004246A6 /* Compositions */,
+				3CC9FC1A2B8F8ED1004246A6 /* Composers.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3CC9FC0F2B8F8EC4004246A6 /* Compositions */ = {
+			isa = PBXGroup;
+			children = (
+				3CC9FC102B8F8EC4004246A6 /* Nocturne-C.mp3 */,
+				3CC9FC112B8F8EC4004246A6 /* Fourseasons-V.mp3 */,
+				3CC9FC122B8F8EC4004246A6 /* Serenade-S.mp3 */,
+				3CC9FC132B8F8EC4004246A6 /* Requiem-M.mp3 */,
+				3CC9FC142B8F8EC4004246A6 /* Moonlight-B.mp3 */,
+			);
+			path = Compositions;
+			sourceTree = "<group>";
+		};
+		3CC9FC1C2B8F9C25004246A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3CC9FBFB2B8F82F9004246A6 /* ComposersViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +169,12 @@
 			files = (
 				3CC9FC042B8F82FB004246A6 /* LaunchScreen.storyboard in Resources */,
 				3CC9FC012B8F82FB004246A6 /* Assets.xcassets in Resources */,
+				3CC9FC152B8F8EC4004246A6 /* Nocturne-C.mp3 in Resources */,
+				3CC9FC162B8F8EC4004246A6 /* Fourseasons-V.mp3 in Resources */,
 				3CC9FBFF2B8F82F9004246A6 /* Main.storyboard in Resources */,
+				3CC9FC192B8F8EC4004246A6 /* Moonlight-B.mp3 in Resources */,
+				3CC9FC182B8F8EC4004246A6 /* Requiem-M.mp3 in Resources */,
+				3CC9FC172B8F8EC4004246A6 /* Serenade-S.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CC9FBFC2B8F82F9004246A6 /* ViewController.swift in Sources */,
+				3CC9FBFC2B8F82F9004246A6 /* ComposersViewController.swift in Sources */,
+				3CC9FC1B2B8F8ED1004246A6 /* Composers.swift in Sources */,
 				3CC9FBF82B8F82F9004246A6 /* AppDelegate.swift in Sources */,
 				3CC9FBFA2B8F82F9004246A6 /* SceneDelegate.swift in Sources */,
 			);
