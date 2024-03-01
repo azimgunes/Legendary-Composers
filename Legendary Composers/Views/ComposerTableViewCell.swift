@@ -30,12 +30,26 @@ class ComposerTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    private lazy var badgeImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+       return imageView
+    }()
+    
+    private lazy var playButton : UIButton = {
+        let playButton = UIButton()
+        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.tintColor = .white
+        return playButton
+    }()
+    
     private lazy var nameLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.tintColor = .white
+        label.textColor = .white
         return label
     }()
     
@@ -44,7 +58,7 @@ class ComposerTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 12, weight: .medium)
-        label.tintColor = .white
+        label.textColor = .white
         return label
     }()
 
@@ -53,7 +67,7 @@ class ComposerTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 10, weight: .light)
-        label.tintColor = .white
+        label.textColor = .white
         return label
     }()
     
@@ -62,13 +76,24 @@ class ComposerTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 12, weight: .medium)
-        label.tintColor = .white
+        label.textColor = .white
         return label
     }()
+    
+    // MARK: - Lifecycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        containerView.layer.cornerRadius = 15
+    }
     
     func configure(){
         
         containerView.backgroundColor = ComposerType.beethoven.background
+        
+        badgeImageView.image = ComposerType.beethoven.badge
+        playButton.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32)), for: .normal)
+        
         
         nameLabel.text = "Beethoven"
         birthdayLabel.text = "1770"
@@ -78,6 +103,8 @@ class ComposerTableViewCell: UITableViewCell {
         self.contentView.addSubview(containerView)
         
         containerView.addSubview(contentStackView)
+        containerView.addSubview(badgeImageView)
+        containerView.addSubview(playButton)
         
         contentStackView.addArrangedSubview(nameLabel)
         contentStackView.addArrangedSubview(birthdayLabel)
@@ -86,15 +113,26 @@ class ComposerTableViewCell: UITableViewCell {
         
         
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            containerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            containerView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
+            containerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
+            containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 8),
+            containerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -8),
             
-            contentStackView.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: 8),
-            contentStackView.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor, constant: -8),
-            contentStackView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: 8),
-            contentStackView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: -8),
+            badgeImageView.heightAnchor.constraint(equalToConstant: 50),
+            badgeImageView.widthAnchor.constraint(equalToConstant: 50),
+            badgeImageView.topAnchor.constraint(equalTo: contentStackView.topAnchor),
+            badgeImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8),
+            
+            
+            contentStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
+            contentStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
+            contentStackView.leadingAnchor.constraint(equalTo: badgeImageView.trailingAnchor, constant: 8),
+            contentStackView.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: 8),
+            
+            playButton.heightAnchor.constraint(equalToConstant: 44),
+            playButton.widthAnchor.constraint(equalToConstant: 44),
+            playButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
+            playButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
  
         ])
        

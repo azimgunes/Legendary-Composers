@@ -9,6 +9,8 @@ import UIKit
 
 class ComposersViewController: UIViewController {
     
+    
+    
     // MARK: - UI
     
     private lazy var tableView: UITableView = {
@@ -23,6 +25,7 @@ class ComposersViewController: UIViewController {
         return tv
     }()
     
+    
     // MARK: - Lifecycle
     override func loadView() {
         super.loadView()
@@ -32,7 +35,6 @@ class ComposersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.view.backgroundColor = .white
     }
