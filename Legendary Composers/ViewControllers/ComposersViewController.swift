@@ -26,6 +26,8 @@ class ComposersViewController: UIViewController {
     }()
     
     
+    private lazy var composersViewModel = ComposersViewModel()
+    
     // MARK: - Lifecycle
     override func loadView() {
         super.loadView()
@@ -44,6 +46,10 @@ class ComposersViewController: UIViewController {
 private extension ComposersViewController {
     func setup(){
         
+        self.navigationController?.navigationBar.topItem?.title = "Legendary Composers"
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        
+        
         tableView.dataSource = self
         tableView.delegate = self
         self.view.addSubview(tableView)
@@ -53,7 +59,7 @@ private extension ComposersViewController {
             tableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
-
+            
         ])
     }
 }
@@ -63,13 +69,15 @@ private extension ComposersViewController {
 
 extension ComposersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return composersViewModel.composers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let composer = composersViewModel.composers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: ComposerTableViewCell.cellId, for: indexPath) as! ComposerTableViewCell
-        cell.configure()
+        cell.configure(with: composer)
         return cell
+        
     }
     
     

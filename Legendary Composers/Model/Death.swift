@@ -8,8 +8,8 @@
 import Foundation
 
 enum Countries {
-    case austria
-    case france
+    case Austria
+    case France
     
 }
 

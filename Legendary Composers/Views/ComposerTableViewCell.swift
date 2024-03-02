@@ -57,7 +57,7 @@ class ComposerTableViewCell: UITableViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.font = .systemFont(ofSize: 10, weight: .medium)
         label.textColor = .white
         return label
     }()
@@ -66,7 +66,7 @@ class ComposerTableViewCell: UITableViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 10, weight: .light)
+        label.font = .systemFont(ofSize: 10, weight: .medium)
         label.textColor = .white
         return label
     }()
@@ -87,18 +87,18 @@ class ComposerTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 15
     }
     
-    func configure(){
+    func configure(with item: Composer){
         
-        containerView.backgroundColor = ComposerType.beethoven.background
+        containerView.backgroundColor = item.id.background
         
-        badgeImageView.image = ComposerType.beethoven.badge
-        playButton.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32)), for: .normal)
+        badgeImageView.image = item.id.badge
+        playButton.setImage(item.isPlaying ? Assets.pause : Assets.play, for: .normal)
         
         
-        nameLabel.text = "Beethoven"
-        birthdayLabel.text = "1770"
-        deathLabel.text = "1827"
-        infoLabel.text = "Ludwig van Beethoven was a German pianist and composer widely considered to be one of the greatest musical geniuses of all time. His innovative compositions combined vocals and instruments, widening the scope of sonata, symphony, concerto and quartet. He is the crucial transitional figure connecting the Classical and Romantic ages of Western music."
+        nameLabel.text = item.name
+        birthdayLabel.text = "Birth: \(item.birthday)"
+        deathLabel.text = "Death: \(item.death.country) \(item.death.date)"
+        infoLabel.text = item.info
         
         self.contentView.addSubview(containerView)
         

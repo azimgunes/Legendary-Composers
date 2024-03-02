@@ -23,6 +23,7 @@
 		3CC9FC182B8F8EC4004246A6 /* Requiem-M.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC132B8F8EC4004246A6 /* Requiem-M.mp3 */; };
 		3CC9FC192B8F8EC4004246A6 /* Moonlight-B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9FC142B8F8EC4004246A6 /* Moonlight-B.mp3 */; };
 		3CC9FC1B2B8F8ED1004246A6 /* Composers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9FC1A2B8F8ED1004246A6 /* Composers.swift */; };
+		3CD293962B9359BF008E5E3C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD293952B9359BF008E5E3C /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		3CC9FC132B8F8EC4004246A6 /* Requiem-M.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Requiem-M.mp3"; sourceTree = "<group>"; };
 		3CC9FC142B8F8EC4004246A6 /* Moonlight-B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Moonlight-B.mp3"; sourceTree = "<group>"; };
 		3CC9FC1A2B8F8ED1004246A6 /* Composers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composers.swift; sourceTree = "<group>"; };
+		3CD293952B9359BF008E5E3C /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				3CC9FC0F2B8F8EC4004246A6 /* Compositions */,
 				3CC9FC1A2B8F8ED1004246A6 /* Composers.swift */,
+				3CD293952B9359BF008E5E3C /* Assets.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				3CC9FBF82B8F82F9004246A6 /* AppDelegate.swift in Sources */,
 				3CC821942B9083D9006216E7 /* Death.swift in Sources */,
 				3CC9FBFA2B8F82F9004246A6 /* SceneDelegate.swift in Sources */,
+				3CD293962B9359BF008E5E3C /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
