@@ -77,8 +77,7 @@ extension ComposersViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: ComposerTableViewCell.cellId, for: indexPath) as! ComposerTableViewCell
         cell.configure(with: composer)
         return cell
-        
+
     }
-    
-    
+  
 }

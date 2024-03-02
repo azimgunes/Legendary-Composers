@@ -8,12 +8,11 @@
 import UIKit
 
 class ComposerTableViewCell: UITableViewCell {
-
+    
     static let cellId = "ComposerTableViewCell"
     
     
     //MARK: - UI
-    
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -34,7 +33,7 @@ class ComposerTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-       return imageView
+        return imageView
     }()
     
     private lazy var playButton : UIButton = {
@@ -45,7 +44,7 @@ class ComposerTableViewCell: UITableViewCell {
     }()
     
     private lazy var nameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 22, weight: .bold)
@@ -54,16 +53,16 @@ class ComposerTableViewCell: UITableViewCell {
     }()
     
     private lazy var birthdayLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 10, weight: .medium)
         label.textColor = .white
         return label
     }()
-
+    
     private lazy var deathLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 10, weight: .medium)
@@ -72,7 +71,7 @@ class ComposerTableViewCell: UITableViewCell {
     }()
     
     private lazy var infoLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 12, weight: .medium)
@@ -133,11 +132,8 @@ class ComposerTableViewCell: UITableViewCell {
             playButton.widthAnchor.constraint(equalToConstant: 44),
             playButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
             playButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
- 
+            
         ])
-       
-        
 
-        
     }
 }
