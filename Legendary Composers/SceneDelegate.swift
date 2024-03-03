@@ -14,12 +14,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
+        
         guard let scene = (scene as? UIWindowScene) else { return }
-        let viewCon = ComposersViewController()
+        let viewCon = IntroViewController()
         let navCon = UINavigationController(rootViewController: viewCon)
         window = UIWindow(windowScene: scene)
         window?.rootViewController = navCon
         window?.makeKeyAndVisible()
+        
+   
+        
+        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

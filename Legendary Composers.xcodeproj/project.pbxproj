@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C788AD52B93D6FF0021BE94 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C788AD42B93D6FF0021BE94 /* IntroViewController.swift */; };
 		3CC821922B908181006216E7 /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC821912B908181006216E7 /* Composer.swift */; };
 		3CC821942B9083D9006216E7 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC821932B9083D9006216E7 /* Death.swift */; };
 		3CC821972B9085D6006216E7 /* ComposersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC821962B9085D6006216E7 /* ComposersViewModel.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C788AD42B93D6FF0021BE94 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		3CC821912B908181006216E7 /* Composer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
 		3CC821932B9083D9006216E7 /* Death.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
 		3CC821962B9085D6006216E7 /* ComposersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposersViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				3CC9FBFB2B8F82F9004246A6 /* ComposersViewController.swift */,
+				3C788AD42B93D6FF0021BE94 /* IntroViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				3CC9FBFC2B8F82F9004246A6 /* ComposersViewController.swift in Sources */,
 				3CC9FC1B2B8F8ED1004246A6 /* Composers.swift in Sources */,
 				3CC821972B9085D6006216E7 /* ComposersViewModel.swift in Sources */,
+				3C788AD52B93D6FF0021BE94 /* IntroViewController.swift in Sources */,
 				3CC9FBF82B8F82F9004246A6 /* AppDelegate.swift in Sources */,
 				3CC821942B9083D9006216E7 /* Death.swift in Sources */,
 				3CC9FBFA2B8F82F9004246A6 /* SceneDelegate.swift in Sources */,

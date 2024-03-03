@@ -34,20 +34,23 @@ class ComposersViewController: UIViewController {
         setup()
     }
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-    }
+        self.title = "Legendary Composers"
+        }
 }
 
 
 private extension ComposersViewController {
     func setup(){
         
-        self.navigationController?.navigationBar.topItem?.title = "Legendary Composers"
         self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
         
         
         tableView.dataSource = self
@@ -77,7 +80,7 @@ extension ComposersViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: ComposerTableViewCell.cellId, for: indexPath) as! ComposerTableViewCell
         cell.configure(with: composer)
         return cell
-
+        
     }
-  
+    
 }
