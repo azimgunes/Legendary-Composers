@@ -78,9 +78,19 @@ extension ComposersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let composer = composersViewModel.composers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: ComposerTableViewCell.cellId, for: indexPath) as! ComposerTableViewCell
-        cell.configure(with: composer)
+        cell.configure(with: composer, delegate: self)
         return cell
         
     }
+    
+   
+}
+
+extension ComposersViewController: ComposerTableViewCellDelegate {
+    func didTapPlayButton(for composer: Composer) {
+        composersViewModel.togglePlaying(for: composer)
+        tableView.reloadData()
+    }
+    
     
 }

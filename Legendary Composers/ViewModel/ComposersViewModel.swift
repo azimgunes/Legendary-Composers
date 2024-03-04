@@ -40,4 +40,14 @@ class ComposersViewModel {
                  death: .init(date: 1828, country: .Austria),
                  birthday: 1797),
     ]
+    
+    func togglePlaying(for composer: Composer){
+        composers.forEach { item in
+            if item.id == composer.id {
+                item.isPlaying.toggle()
+            } else {
+                item.isPlaying = false
+            }
+        }
+    }
 }

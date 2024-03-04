@@ -7,6 +7,11 @@
 
 import UIKit
 
+
+protocol ComposerTableViewCellDelegate: class {
+    func didTapPlayButton(for composer: Composer)
+}
+
 class ComposerTableViewCell: UITableViewCell {
     
     static let cellId = "ComposerTableViewCell"
@@ -79,6 +84,9 @@ class ComposerTableViewCell: UITableViewCell {
         return label
     }()
     
+    private weak var delegate: ComposerTableViewCellDelegate?
+    private var composer: Composer?
+    
     // MARK: - Lifecycle
     
     override func layoutSubviews() {
@@ -86,7 +94,19 @@ class ComposerTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = 15
     }
     
-    func configure(with item: Composer){
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.composer = nil
+        self.delegate = nil
+        self.contentView.subviews.forEach { $0.removeFromSuperview()}
+    }
+    
+    func configure(with item: Composer, delegate: ComposerTableViewCellDelegate){
+        
+        self.delegate = delegate
+        self.composer = item
+        
+        playButton.addTarget(self, action: #selector(didTapPlayButton), for: .touchUpInside)
         
         containerView.backgroundColor = item.id.background
         
@@ -136,4 +156,13 @@ class ComposerTableViewCell: UITableViewCell {
         ])
 
     }
+    
+    @objc func didTapPlayButton(){
+        
+        if let composer = composer {
+            delegate?.didTapPlayButton(for: composer)
+
+        }
+    }
+    
 }
