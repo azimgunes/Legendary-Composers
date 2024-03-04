@@ -13,6 +13,7 @@ enum ComposerType {
     case vivaldi
     case chopin
     case schubert
+   
 }
 
 
@@ -31,6 +32,7 @@ extension ComposerType {
             return UIImage(named: "chopin")!
         case .schubert:
             return UIImage(named: "schubert")!
+    
         }
     }
     var background : UIColor {
@@ -46,6 +48,7 @@ extension ComposerType {
             return UIColor.purple
         case .schubert:
             return UIColor.systemPink
+       
         }
     }
     
@@ -62,6 +65,7 @@ extension ComposerType {
             return "Nocturne-C"
         case .schubert:
             return "Serenade-S"
+
         }
     }
 }

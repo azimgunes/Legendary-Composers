@@ -27,6 +27,8 @@ class ComposersViewController: UIViewController {
     
     
     private lazy var composersViewModel = ComposersViewModel()
+    private lazy var audioManagerViewModel = AuidoManagerViewModel()
+    
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -88,6 +90,7 @@ extension ComposersViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ComposersViewController: ComposerTableViewCellDelegate {
     func didTapPlayButton(for composer: Composer) {
+        audioManagerViewModel.play(composer)
         composersViewModel.togglePlaying(for: composer)
         tableView.reloadData()
     }
