@@ -6,6 +6,14 @@
 //
 
 import UIKit
+import SafariServices
+import Foundation
+
+
+
+class AlertView: UIView {
+    
+}
 
 
 protocol ComposerTableViewCellDelegate: class {
@@ -54,6 +62,11 @@ class ComposerTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.textColor = .white
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ComposerTableViewCell.tapFunction))
+        label.addGestureRecognizer(tap)
+        label.isUserInteractionEnabled = true
+        
+      
         return label
     }()
     
@@ -162,6 +175,39 @@ class ComposerTableViewCell: UITableViewCell {
         if let composer = composer {
             delegate?.didTapPlayButton(for: composer)
 
+        }
+    }
+    
+    @objc func tapFunction(sender:UITapGestureRecognizer) {
+        
+        if nameLabel.text == "Ludwig van Beethoven" {
+            if let url = URL(string: "https://tr.wikipedia.org/wiki/Ludwig_van_Beethoven") {
+                UIApplication.shared.open(url)
+            }
+        } else {
+            if nameLabel.text == "Wolfgang Amadeus Mozart" {
+                if let url = URL(string: "https://tr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart") {
+                    UIApplication.shared.open(url)
+                }
+            } else {
+                if nameLabel.text == "Antonio Vivaldi" {
+                    if let url = URL(string: "https://tr.wikipedia.org/wiki/Antonio_Vivaldi") {
+                        UIApplication.shared.open(url)
+                    }
+                } else {
+                    if nameLabel.text == "Frédéric Chopin" {
+                        if let url = URL(string: "https://tr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin") {
+                            UIApplication.shared.open(url)
+                        }
+                    } else {
+                        if nameLabel.text == "Franz Schubert" {
+                            if let url = URL(string: "https://tr.wikipedia.org/wiki/Franz_Schubert") {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     

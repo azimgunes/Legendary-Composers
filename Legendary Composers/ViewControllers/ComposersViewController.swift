@@ -28,6 +28,7 @@ class ComposersViewController: UIViewController {
     
     private lazy var composersViewModel = ComposersViewModel()
     private lazy var audioManagerViewModel = AuidoManagerViewModel()
+    private lazy var composerTableViewCell = ComposerTableViewCell()
     
     
     // MARK: - Lifecycle
@@ -81,6 +82,7 @@ extension ComposersViewController: UITableViewDataSource, UITableViewDelegate {
         let composer = composersViewModel.composers[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: ComposerTableViewCell.cellId, for: indexPath) as! ComposerTableViewCell
         cell.configure(with: composer, delegate: self)
+        cell.selectionStyle = .none
         return cell
         
     }
@@ -94,6 +96,6 @@ extension ComposersViewController: ComposerTableViewCellDelegate {
         composersViewModel.togglePlaying(for: composer)
         tableView.reloadData()
     }
-    
-    
+
+
 }

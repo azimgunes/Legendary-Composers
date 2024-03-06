@@ -14,6 +14,7 @@ class Composer {
     let death: Death
     let birthday: Int
     var isPlaying : Bool = false
+
     
     internal init(id: ComposerType, name: String, info: String, death: Death, birthday: Int, isPlaying: Bool = false) {
         self.id = id
@@ -22,6 +23,7 @@ class Composer {
         self.death = death
         self.birthday = birthday
         self.isPlaying = isPlaying
+ 
     }
     
 }
