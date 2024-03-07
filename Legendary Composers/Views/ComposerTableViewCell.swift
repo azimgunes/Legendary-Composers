@@ -56,6 +56,16 @@ class ComposerTableViewCell: UITableViewCell {
         return playButton
     }()
     
+    private lazy var toYouTube : UIButton = {
+        let toYouTube = UIButton()
+        toYouTube.translatesAutoresizingMaskIntoConstraints = false
+        toYouTube.tintColor = .white
+        toYouTube.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ComposerTableViewCell.toYouTubeButton))
+        toYouTube.addGestureRecognizer(tap)
+        return toYouTube
+    }()
+    
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +76,7 @@ class ComposerTableViewCell: UITableViewCell {
         label.addGestureRecognizer(tap)
         label.isUserInteractionEnabled = true
         
-      
+        
         return label
     }()
     
@@ -120,11 +130,13 @@ class ComposerTableViewCell: UITableViewCell {
         self.composer = item
         
         playButton.addTarget(self, action: #selector(didTapPlayButton), for: .touchUpInside)
+        toYouTube.addTarget(self, action: #selector(toYouTubeButton), for: .touchUpOutside)
         
         containerView.backgroundColor = item.id.background
         
         badgeImageView.image = item.id.badge
         playButton.setImage(item.isPlaying ? Assets.pause : Assets.play, for: .normal)
+        toYouTube.setImage(Assets.toYT, for: .normal)
         
         
         nameLabel.text = item.name
@@ -137,6 +149,7 @@ class ComposerTableViewCell: UITableViewCell {
         containerView.addSubview(contentStackView)
         containerView.addSubview(badgeImageView)
         containerView.addSubview(playButton)
+        containerView.addSubview(toYouTube)
         
         contentStackView.addArrangedSubview(nameLabel)
         contentStackView.addArrangedSubview(birthdayLabel)
@@ -163,45 +176,83 @@ class ComposerTableViewCell: UITableViewCell {
             
             playButton.heightAnchor.constraint(equalToConstant: 44),
             playButton.widthAnchor.constraint(equalToConstant: 44),
-            playButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
-            playButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            playButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -4),
+            //playButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            playButton.topAnchor.constraint(equalTo: contentStackView.topAnchor)
             
         ])
-
+        
     }
     
     @objc func didTapPlayButton(){
         
         if let composer = composer {
             delegate?.didTapPlayButton(for: composer)
-
+            
         }
     }
-    
-    @objc func tapFunction(sender:UITapGestureRecognizer) {
+
         
+        @objc func tapFunction(sender:UITapGestureRecognizer) {
+            
+            if nameLabel.text == "Ludwig van Beethoven" {
+                if let url = URL(string: "https://tr.wikipedia.org/wiki/Ludwig_van_Beethoven") {
+                    UIApplication.shared.open(url)
+                }
+            } else {
+                if nameLabel.text == "Wolfgang Amadeus Mozart" {
+                    if let url = URL(string: "https://tr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart") {
+                        UIApplication.shared.open(url)
+                    }
+                } else {
+                    if nameLabel.text == "Antonio Vivaldi" {
+                        if let url = URL(string: "https://tr.wikipedia.org/wiki/Antonio_Vivaldi") {
+                            UIApplication.shared.open(url)
+                        }
+                    } else {
+                        if nameLabel.text == "Frédéric Chopin" {
+                            if let url = URL(string: "https://tr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin") {
+                                UIApplication.shared.open(url)
+                            }
+                        } else {
+                            if nameLabel.text == "Franz Schubert" {
+                                if let url = URL(string: "https://tr.wikipedia.org/wiki/Franz_Schubert") {
+                                    UIApplication.shared.open(url)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+extension ComposerTableViewCell {
+    @objc func toYouTubeButton(){
         if nameLabel.text == "Ludwig van Beethoven" {
-            if let url = URL(string: "https://tr.wikipedia.org/wiki/Ludwig_van_Beethoven") {
+            if let url = URL(string: "https://open.spotify.com/intl-tr/artist/2wOqMjp9TyABvtHdOSOTUS") {
                 UIApplication.shared.open(url)
             }
         } else {
             if nameLabel.text == "Wolfgang Amadeus Mozart" {
-                if let url = URL(string: "https://tr.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart") {
+                if let url = URL(string: "https://open.spotify.com/intl-tr/artist/4NJhFmfw43RLBLjQvxDuRS") {
                     UIApplication.shared.open(url)
                 }
             } else {
                 if nameLabel.text == "Antonio Vivaldi" {
-                    if let url = URL(string: "https://tr.wikipedia.org/wiki/Antonio_Vivaldi") {
+                    if let url = URL(string: "https://open.spotify.com/intl-tr/artist/2QOIawHpSlOwXDvSqQ9YJR") {
                         UIApplication.shared.open(url)
                     }
                 } else {
                     if nameLabel.text == "Frédéric Chopin" {
-                        if let url = URL(string: "https://tr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin") {
+                        if let url = URL(string: "https://open.spotify.com/intl-tr/artist/7y97mc3bZRFXzT2szRM4L4") {
                             UIApplication.shared.open(url)
                         }
                     } else {
                         if nameLabel.text == "Franz Schubert" {
-                            if let url = URL(string: "https://tr.wikipedia.org/wiki/Franz_Schubert") {
+                            if let url = URL(string: "https://open.spotify.com/intl-tr/artist/2p0UyoPfYfI76PCStuXfOP") {
                                 UIApplication.shared.open(url)
                             }
                         }
@@ -210,5 +261,4 @@ class ComposerTableViewCell: UITableViewCell {
             }
         }
     }
-    
 }
