@@ -56,7 +56,7 @@ class ComposerTableViewCell: UITableViewCell {
         return playButton
     }()
     
-    private lazy var toYouTube : UIButton = {
+    private lazy var toSpotify : UIButton = {
         let toYouTube = UIButton()
         toYouTube.translatesAutoresizingMaskIntoConstraints = false
         toYouTube.tintColor = .white
@@ -130,13 +130,19 @@ class ComposerTableViewCell: UITableViewCell {
         self.composer = item
         
         playButton.addTarget(self, action: #selector(didTapPlayButton), for: .touchUpInside)
-        toYouTube.addTarget(self, action: #selector(toYouTubeButton), for: .touchUpOutside)
+        toSpotify.addTarget(self, action: #selector(toYouTubeButton), for: .touchUpOutside)
         
         containerView.backgroundColor = item.id.background
         
         badgeImageView.image = item.id.badge
         playButton.setImage(item.isPlaying ? Assets.pause : Assets.play, for: .normal)
-        toYouTube.setImage(Assets.toYT, for: .normal)
+        if #available(iOS 16.0, *) {
+            toSpotify.setImage(Assets.toYT, for: .normal)
+        } else {
+            // Fallback on earlier versions
+        }
+     
+       
         
         
         nameLabel.text = item.name
@@ -149,7 +155,7 @@ class ComposerTableViewCell: UITableViewCell {
         containerView.addSubview(contentStackView)
         containerView.addSubview(badgeImageView)
         containerView.addSubview(playButton)
-        containerView.addSubview(toYouTube)
+        containerView.addSubview(toSpotify)
         
         contentStackView.addArrangedSubview(nameLabel)
         contentStackView.addArrangedSubview(birthdayLabel)
@@ -173,12 +179,20 @@ class ComposerTableViewCell: UITableViewCell {
             contentStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -16),
             contentStackView.leadingAnchor.constraint(equalTo: badgeImageView.trailingAnchor, constant: 8),
             contentStackView.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: 8),
+            contentStackView.leadingAnchor.constraint(equalTo: toSpotify.trailingAnchor, constant: 8),
             
             playButton.heightAnchor.constraint(equalToConstant: 44),
             playButton.widthAnchor.constraint(equalToConstant: 44),
-            playButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -4),
-            //playButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            playButton.topAnchor.constraint(equalTo: contentStackView.topAnchor)
+            playButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8),
+            playButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+          
+            
+            
+            toSpotify.heightAnchor.constraint(equalToConstant: 35),
+            toSpotify.widthAnchor.constraint(equalToConstant: 35),
+            toSpotify.topAnchor.constraint(equalTo: contentStackView.topAnchor, constant: 55),
+            toSpotify.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 8)
+            
             
         ])
         
