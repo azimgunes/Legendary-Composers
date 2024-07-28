@@ -12,6 +12,9 @@ class IntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        overrideUserInterfaceStyle = .light
+
+        
         
         let timer = Timer
             .scheduledTimer(timeInterval: 1.5,

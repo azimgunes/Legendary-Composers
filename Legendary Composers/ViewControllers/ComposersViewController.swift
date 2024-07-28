@@ -35,13 +35,17 @@ class ComposersViewController: UIViewController {
     override func loadView() {
         super.loadView()
         setup()
+        
     }
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewStyle()
         
+        overrideUserInterfaceStyle = .light
+
         self.view.backgroundColor = .white
         self.title = "Legendary Composers"
         }
@@ -98,4 +102,16 @@ extension ComposersViewController: ComposerTableViewCellDelegate {
     }
 
 
+}
+
+extension ComposersViewController{
+    func viewStyle(){
+        let appearance = UINavigationBarAppearance()
+                appearance.configureWithOpaqueBackground()
+                appearance.backgroundColor = UIColor.blue
+                appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+                navigationItem.standardAppearance = appearance
+                navigationItem.scrollEdgeAppearance = appearance
+                navigationItem.compactAppearance = appearance
+    }
 }
